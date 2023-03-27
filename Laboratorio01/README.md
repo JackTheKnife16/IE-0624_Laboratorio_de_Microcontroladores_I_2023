@@ -6,10 +6,7 @@ En este laboratorio se debe crear un circuito que simule una tómbola simplifica
 
 ### Archivo de simulación
 
-El archivo muestra pruebas de los siguientes sub circuitos:
-
-1. contador de tres bits
-2. decodificador BCD a 7 segmentos
+Se completó, al menos eso parece, el circuito auxiliar del laboratorio
 
 ### Informe
 
