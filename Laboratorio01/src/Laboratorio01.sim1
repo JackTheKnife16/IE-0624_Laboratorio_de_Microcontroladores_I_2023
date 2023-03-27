@@ -24,11 +24,7 @@
 
 <item itemtype="Fixed Voltage" CircId="Fixed Voltage-759" mainComp="false" Show_id="false" Show_Val="false" Pos="-1136,-800" rotation="0" hflip="1" vflip="1" label="Fixed Voltage-759" idLabPos="-64,-24" labelrot="0" valLabPos="-16,8" valLabRot="0" Out="true" Voltage="5 V" />
 
-<item itemtype="Fixed Voltage" CircId="Fixed Voltage-760" mainComp="false" Show_id="false" Show_Val="false" Pos="-1136,-644" rotation="0" hflip="1" vflip="1" label="Fixed Voltage-760" idLabPos="-64,-24" labelrot="0" valLabPos="-16,8" valLabRot="0" Out="true" Voltage="5 V" />
-
 <item itemtype="Buffer" CircId="Buffer-867" mainComp="false" Show_id="false" Show_Val="false" Pos="-1072,-592" rotation="0" hflip="1" vflip="1" label="Buffer-867" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Tristate="false" Inverted="true" Open_Collector="false" Input_High_V="2.5 V" Input_Low_V="2.5 V" Input_Imped="1e+9 Ω" Out_High_V="5 V" Out_Low_V="0 V" Out_Imped="40 Ω" initHigh="false" Tpd_ps="10000 ps" Tr_ps="3000 ps" Tf_ps="4000 ps" />
-
-<item itemtype="Fixed Voltage" CircId="Fixed Voltage-880" mainComp="false" Show_id="false" Show_Val="false" Pos="-1116,-368" rotation="0" hflip="1" vflip="1" label="Fixed Voltage-880" idLabPos="-64,-24" labelrot="0" valLabPos="-16,8" valLabRot="0" Out="false" Voltage="5 V" />
 
 <item itemtype="FlipFlopD" CircId="FlipFlopD-888" mainComp="false" Show_id="false" Show_Val="false" Pos="-632,-872" rotation="0" hflip="1" vflip="1" label="FlipFlopD-888" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" UseRS="false" Reset_Inverted="true" Clock_Inverted="false" Trigger="Clock" Input_High_V="2.5 V" Input_Low_V="2.5 V" Input_Imped="1e+9 Ω" Out_High_V="5 V" Out_Low_V="0 V" Out_Imped="40 Ω" Tpd_ps="10000 ps" Tr_ps="3000 ps" Tf_ps="4000 ps" />
 
@@ -116,6 +112,10 @@
 
 <item itemtype="TextComponent" CircId="TextComponent-1427" mainComp="false" Show_id="false" Show_Val="false" Pos="-1364,-380" rotation="0" hflip="1" vflip="1" label="TextComponent-1427" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Margin="5 _Pixels" Border="1 _Pixels" Opacity="1" Font="PULSO DEL MICRO" Font_Size="10 _Pixels" Fixed_Width="true" Text="SALIDA DE RESET PARA EL CONTADOR" />
 
+<item itemtype="MCU" CircId="p12F675-1574" mainComp="false" Show_id="true" Show_Val="false" Pos="-1192,-732" rotation="0" hflip="1" vflip="1" label="p12F675-1574" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="16 MHz" Program="tombola.hex" Auto_Load="false" Rst_enabled="false" Ext_Osc="false" Wdt_enabled="false" />
+
+<item itemtype="Probe" CircId="Probe-1590" mainComp="false" Show_id="false" Show_Val="true" Pos="-1268,-748" rotation="-45" hflip="1" vflip="1" label="Probe-1590" idLabPos="16,-16" labelrot="45" valLabPos="16,0" valLabRot="45" ShowVolt="true" Threshold="2.5 V" />
+
 <item itemtype="Node" CircId="Node-336" mainComp="false" Pos="-948,-500" />
 
 <item itemtype="Node" CircId="Node-339" mainComp="false" Pos="-860,-500" />
@@ -133,8 +133,6 @@
 <item itemtype="Node" CircId="Node-734" mainComp="false" Pos="-964,-500" />
 
 <item itemtype="Node" CircId="Node-756" mainComp="false" Pos="-876,-564" />
-
-<item itemtype="Node" CircId="Node-869" mainComp="false" Pos="-1092,-644" />
 
 <item itemtype="Node" CircId="Node-883" mainComp="false" Pos="-992,-368" />
 
@@ -163,6 +161,8 @@
 <item itemtype="Node" CircId="Node-1203" mainComp="false" Pos="-756,-832" />
 
 <item itemtype="Node" CircId="Node-1207" mainComp="false" Pos="-760,-676" />
+
+<item itemtype="Node" CircId="Node-1585" mainComp="false" Pos="-1084,-644" />
 
 <item itemtype="Connector" uid="connector-1428" startpinid="And Gate-332-out" endpinid="Node-339-0" pointList="-860,-520,-860,-500" />
 
@@ -224,17 +224,7 @@
 
 <item itemtype="Connector" uid="connector-1457" startpinid="Node-756-2" endpinid="Bus-744-ePin0" pointList="-876,-564,-796,-564,-796,-580" />
 
-<item itemtype="Connector" uid="connector-1458" startpinid="Fixed Voltage-759-outnod" endpinid="Demux-502-in3" pointList="-1120,-800,-812,-800" />
-
-<item itemtype="Connector" uid="connector-1459" startpinid="Fixed Voltage-760-outnod" endpinid="Node-869-0" pointList="-1120,-644,-1092,-644" />
-
-<item itemtype="Connector" uid="connector-1460" startpinid="Buffer-867-in0" endpinid="Node-869-1" pointList="-1088,-592,-1092,-592,-1092,-644" />
-
-<item itemtype="Connector" uid="connector-1461" startpinid="Node-869-2" endpinid="Demux-501-in3" pointList="-1092,-644,-812,-644" />
-
 <item itemtype="Connector" uid="connector-1462" startpinid="Buffer-867-out" endpinid="Node-358-0" pointList="-1056,-592,-1044,-592,-1044,-432,-1020,-432" />
-
-<item itemtype="Connector" uid="connector-1463" startpinid="Fixed Voltage-880-outnod" endpinid="Node-883-0" pointList="-1100,-368,-992,-368" />
 
 <item itemtype="Connector" uid="connector-1464" startpinid="FlipFlopJK-324-in3" endpinid="Node-886-0" pointList="-920,-468,-920,-368,-924,-368" />
 
@@ -455,5 +445,17 @@
 <item itemtype="Connector" uid="connector-1572" startpinid="Node-1207-2" endpinid="Demux-501-out0" pointList="-760,-676,-764,-676" />
 
 <item itemtype="Connector" uid="connector-1573" startpinid="And Gate-1089-out" endpinid="BcdTo7S-1084-in4" pointList="-452,-860,-428,-860,-428,-836" />
+
+<item itemtype="Connector" uid="Connector-1584" startpinid="p12F675-1574-PORTP1" endpinid="Node-1585-1" pointList="-1152,-708,-1084,-708,-1084,-644" />
+
+<item itemtype="Connector" uid="Connector-1586" startpinid="Node-1585-2" endpinid="Demux-501-in3" pointList="-1084,-644,-812,-644" />
+
+<item itemtype="Connector" uid="connector-1460" startpinid="Buffer-867-in0" endpinid="Node-1585-0" pointList="-1088,-592,-1092,-592,-1092,-644,-1084,-644" />
+
+<item itemtype="Connector" uid="Connector-1587" startpinid="p12F675-1574-PORTP2" endpinid="Node-883-0" pointList="-1152,-700,-1152,-416,-1068,-416,-1068,-368,-992,-368" />
+
+<item itemtype="Connector" uid="Connector-1581" startpinid="p12F675-1574-PORTP0" endpinid="Demux-502-in3" pointList="-1152,-716,-1004,-716,-1004,-800,-812,-800" />
+
+<item itemtype="Connector" uid="Connector-1592" startpinid="p12F675-1574-PORTP5" endpinid="Probe-1590-inpin" pointList="-1200,-716,-1284,-716,-1284,-732" />
 
 </circuit>
