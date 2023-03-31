@@ -110,9 +110,9 @@
 
 <item itemtype="TextComponent" CircId="TextComponent-1427" mainComp="false" Show_id="false" Show_Val="false" Pos="-1364,-380" rotation="0" hflip="1" vflip="1" label="TextComponent-1427" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Margin="5 _Pixels" Border="1 _Pixels" Opacity="1" Font="PULSO DEL MICRO" Font_Size="10 _Pixels" Fixed_Width="true" Text="SALIDA DE RESET PARA EL CONTADOR" />
 
-<item itemtype="Fixed Voltage" CircId="Fixed Voltage-1738" mainComp="false" Show_id="false" Show_Val="false" Pos="-1292,-644" rotation="0" hflip="1" vflip="1" label="Fixed Voltage-1738" idLabPos="-64,-24" labelrot="0" valLabPos="-16,8" valLabRot="0" Out="true" Voltage="5 V" />
+<item itemtype="Fixed Voltage" CircId="Fixed Voltage-1738" mainComp="false" Show_id="false" Show_Val="false" Pos="-1404,-780" rotation="0" hflip="1" vflip="1" label="Fixed Voltage-1738" idLabPos="-64,-24" labelrot="0" valLabPos="-16,8" valLabRot="0" Out="true" Voltage="5 V" />
 
-<item itemtype="Push" CircId="Push-1739" mainComp="false" Show_id="false" Show_Val="false" Pos="-1244,-648" rotation="0" hflip="1" vflip="1" label="Push-1739" idLabPos="-12,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Norm_Close="false" Poles="1 _Poles" />
+<item itemtype="Push" CircId="Push-1739" mainComp="false" Show_id="false" Show_Val="false" Pos="-1356,-784" rotation="0" hflip="1" vflip="1" label="Push-1739" idLabPos="-12,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Norm_Close="false" Poles="1 _Poles" />
 
 <item itemtype="MCU" CircId="p12F683-1895" mainComp="false" Show_id="true" Show_Val="false" Pos="-1164,-816" rotation="0" hflip="1" vflip="1" label="p12F683-1895" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="16 MHz" Program="tombola.hex" Auto_Load="false" Rst_enabled="false" Ext_Osc="false" Wdt_enabled="false" />
 
@@ -125,6 +125,14 @@
 <item itemtype="Probe" CircId="Probe-2071" mainComp="false" Show_id="false" Show_Val="true" Pos="-940,-912" rotation="-45" hflip="1" vflip="1" label="Probe-2071" idLabPos="16,-16" labelrot="45" valLabPos="16,0" valLabRot="45" ShowVolt="true" Threshold="2.5 V" />
 
 <item itemtype="Probe" CircId="Probe-2079" mainComp="false" Show_id="false" Show_Val="true" Pos="-1004,-884" rotation="-45" hflip="1" vflip="1" label="Probe-2079" idLabPos="16,-16" labelrot="45" valLabPos="16,0" valLabRot="45" ShowVolt="true" Threshold="2.5 V" />
+
+<item itemtype="Resistor" CircId="Resistor-2240" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="-1304,-784" rotation="0" hflip="1" vflip="1" label="Resistor-2240" idLabPos="-16,-24" labelrot="0" valLabPos="-16,6" valLabRot="0" Resistance="100 Ω" />
+
+<item itemtype="Resistor" CircId="Resistor-2241" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="-1200,-756" rotation="90" hflip="1" vflip="1" label="Resistor-2241" idLabPos="-16,-24" labelrot="0" valLabPos="-16,6" valLabRot="0" Resistance="240 Ω" />
+
+<item itemtype="Capacitor" CircId="Capacitor-2242" mainComp="false" ShowProp="Capacitance" Show_id="false" Show_Val="true" Pos="-1240,-756" rotation="90" hflip="1" vflip="1" label="Capacitor-2242" idLabPos="-16,-24" labelrot="0" valLabPos="-16,6" valLabRot="0" Capacitance="10 µF" Resistance="1e-6 Ω" InitVolt="0 V" AutoStep="0 _Steps" />
+
+<item itemtype="Ground" CircId="Ground-2254" mainComp="false" Show_id="false" Show_Val="false" Pos="-1220,-708" rotation="0" hflip="1" vflip="1" label="Ground-2254" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
 
 <item itemtype="Node" CircId="Node-336" mainComp="false" Pos="-948,-500" />
 
@@ -184,320 +192,342 @@
 
 <item itemtype="Node" CircId="Node-2081" mainComp="false" Pos="-1020,-800" />
 
-<item itemtype="Connector" uid="connector-1896" startpinid="And Gate-332-out" endpinid="Node-339-0" pointList="-860,-520,-860,-500" />
+<item itemtype="Node" CircId="Node-2248" mainComp="false" Pos="-1240,-784" />
 
-<item itemtype="Connector" uid="connector-1897" startpinid="And Gate-332-in0" endpinid="Node-336-1" pointList="-892,-524,-948,-524,-948,-500" />
+<item itemtype="Node" CircId="Node-2251" mainComp="false" Pos="-1200,-784" />
 
-<item itemtype="Connector" uid="connector-1898" startpinid="Node-336-2" endpinid="FlipFlopJK-324-in0" pointList="-948,-500,-944,-500" />
+<item itemtype="Node" CircId="Node-2257" mainComp="false" Pos="-1220,-724" />
 
-<item itemtype="Connector" uid="connector-1899" startpinid="FlipFlopJK-325-in1" endpinid="Node-339-1" pointList="-852,-484,-860,-484,-860,-500" />
+<item itemtype="Connector" uid="connector-2082" startpinid="And Gate-332-out" endpinid="Node-339-0" pointList="-860,-520,-860,-500" />
 
-<item itemtype="Connector" uid="connector-1900" startpinid="Node-339-2" endpinid="FlipFlopJK-325-in0" pointList="-860,-500,-852,-500" />
+<item itemtype="Connector" uid="connector-2083" startpinid="And Gate-332-in0" endpinid="Node-336-1" pointList="-892,-524,-948,-524,-948,-500" />
 
-<item itemtype="Connector" uid="connector-1901" startpinid="FlipFlopJK-324-in1" endpinid="Node-342-1" pointList="-944,-484,-956,-484,-956,-500" />
+<item itemtype="Connector" uid="connector-2084" startpinid="Node-336-2" endpinid="FlipFlopJK-324-in0" pointList="-948,-500,-944,-500" />
 
-<item itemtype="Connector" uid="connector-1902" startpinid="Node-342-2" endpinid="Node-336-0" pointList="-956,-500,-948,-500" />
+<item itemtype="Connector" uid="connector-2085" startpinid="FlipFlopJK-325-in1" endpinid="Node-339-1" pointList="-852,-484,-860,-484,-860,-500" />
 
-<item itemtype="Connector" uid="connector-1903" startpinid="FlipFlopJK-326-in1" endpinid="Node-371-0" pointList="-1012,-484,-1028,-484,-1028,-500" />
+<item itemtype="Connector" uid="connector-2086" startpinid="Node-339-2" endpinid="FlipFlopJK-325-in0" pointList="-860,-500,-852,-500" />
 
-<item itemtype="Connector" uid="connector-1904" startpinid="FlipFlopJK-326-in4" endpinid="Node-358-1" pointList="-1012,-492,-1020,-492,-1020,-432" />
+<item itemtype="Connector" uid="connector-2087" startpinid="FlipFlopJK-324-in1" endpinid="Node-342-1" pointList="-944,-484,-956,-484,-956,-500" />
 
-<item itemtype="Connector" uid="connector-1905" startpinid="Node-358-2" endpinid="Node-367-0" pointList="-1020,-432,-964,-432" />
+<item itemtype="Connector" uid="connector-2088" startpinid="Node-342-2" endpinid="Node-336-0" pointList="-956,-500,-948,-500" />
 
-<item itemtype="Connector" uid="connector-1906" startpinid="FlipFlopJK-324-in4" endpinid="Node-367-1" pointList="-944,-492,-964,-492,-964,-432" />
+<item itemtype="Connector" uid="connector-2089" startpinid="FlipFlopJK-326-in1" endpinid="Node-371-0" pointList="-1012,-484,-1028,-484,-1028,-500" />
 
-<item itemtype="Connector" uid="connector-1907" startpinid="Node-367-2" endpinid="FlipFlopJK-325-in4" pointList="-964,-432,-876,-432,-876,-492,-852,-492" />
+<item itemtype="Connector" uid="connector-2090" startpinid="FlipFlopJK-326-in4" endpinid="Node-358-1" pointList="-1012,-492,-1020,-492,-1020,-432" />
 
-<item itemtype="Connector" uid="connector-1908" startpinid="Fixed Voltage-369-outnod" endpinid="Node-371-1" pointList="-1056,-500,-1028,-500" />
+<item itemtype="Connector" uid="connector-2091" startpinid="Node-358-2" endpinid="Node-367-0" pointList="-1020,-432,-964,-432" />
 
-<item itemtype="Connector" uid="connector-1909" startpinid="Node-371-2" endpinid="FlipFlopJK-326-in0" pointList="-1028,-500,-1012,-500" />
+<item itemtype="Connector" uid="connector-2092" startpinid="FlipFlopJK-324-in4" endpinid="Node-367-1" pointList="-944,-492,-964,-492,-964,-432" />
 
-<item itemtype="Connector" uid="connector-1910" startpinid="FlipFlopJK-324-out0" endpinid="Node-731-0" pointList="-904,-500,-904,-516" />
+<item itemtype="Connector" uid="connector-2093" startpinid="Node-367-2" endpinid="FlipFlopJK-325-in4" pointList="-964,-432,-876,-432,-876,-492,-852,-492" />
 
-<item itemtype="Connector" uid="connector-1911" startpinid="FlipFlopJK-326-out0" endpinid="Node-734-0" pointList="-972,-500,-964,-500" />
+<item itemtype="Connector" uid="connector-2094" startpinid="Fixed Voltage-369-outnod" endpinid="Node-371-1" pointList="-1056,-500,-1028,-500" />
 
-<item itemtype="Connector" uid="connector-1912" startpinid="FlipFlopJK-325-out0" endpinid="Bus-639-ePin3" pointList="-812,-500,-812,-556,-876,-556" />
+<item itemtype="Connector" uid="connector-2095" startpinid="Node-371-2" endpinid="FlipFlopJK-326-in0" pointList="-1028,-500,-1012,-500" />
 
-<item itemtype="Connector" uid="connector-1913" startpinid="Bus-639-ePin2" endpinid="Node-731-1" pointList="-884,-556,-884,-540,-904,-540,-904,-516" />
+<item itemtype="Connector" uid="connector-2096" startpinid="FlipFlopJK-324-out0" endpinid="Node-731-0" pointList="-904,-500,-904,-516" />
 
-<item itemtype="Connector" uid="connector-1914" startpinid="Node-731-2" endpinid="And Gate-332-in1" pointList="-904,-516,-892,-516" />
+<item itemtype="Connector" uid="connector-2097" startpinid="FlipFlopJK-326-out0" endpinid="Node-734-0" pointList="-972,-500,-964,-500" />
 
-<item itemtype="Connector" uid="connector-1915" startpinid="Bus-639-ePin1" endpinid="Node-734-1" pointList="-892,-556,-964,-556,-964,-500" />
+<item itemtype="Connector" uid="connector-2098" startpinid="FlipFlopJK-325-out0" endpinid="Bus-639-ePin3" pointList="-812,-500,-812,-556,-876,-556" />
 
-<item itemtype="Connector" uid="connector-1916" startpinid="Node-734-2" endpinid="Node-342-0" pointList="-964,-500,-956,-500" />
+<item itemtype="Connector" uid="connector-2099" startpinid="Bus-639-ePin2" endpinid="Node-731-1" pointList="-884,-556,-884,-540,-904,-540,-904,-516" />
 
-<item itemtype="Connector" uid="connector-1917" startpinid="Bus-744-ePin3" endpinid="Demux-501-in2" pointList="-796,-588,-796,-596" />
+<item itemtype="Connector" uid="connector-2100" startpinid="Node-731-2" endpinid="And Gate-332-in1" pointList="-904,-516,-892,-516" />
 
-<item itemtype="Connector" uid="connector-1918" startpinid="Bus-744-ePin2" endpinid="Demux-501-in1" pointList="-788,-588,-788,-596" />
+<item itemtype="Connector" uid="connector-2101" startpinid="Bus-639-ePin1" endpinid="Node-734-1" pointList="-892,-556,-964,-556,-964,-500" />
 
-<item itemtype="Connector" uid="connector-1919" startpinid="Bus-744-ePin1" endpinid="Demux-501-in0" pointList="-780,-588,-780,-596" />
+<item itemtype="Connector" uid="connector-2102" startpinid="Node-734-2" endpinid="Node-342-0" pointList="-964,-500,-956,-500" />
 
-<item itemtype="Connector" uid="connector-1920" startpinid="Bus-749-ePin1" endpinid="Demux-502-in0" pointList="-780,-744,-780,-752" />
+<item itemtype="Connector" uid="connector-2103" startpinid="Bus-744-ePin3" endpinid="Demux-501-in2" pointList="-796,-588,-796,-596" />
 
-<item itemtype="Connector" uid="connector-1921" startpinid="Bus-749-ePin2" endpinid="Demux-502-in1" pointList="-788,-744,-788,-752" />
+<item itemtype="Connector" uid="connector-2104" startpinid="Bus-744-ePin2" endpinid="Demux-501-in1" pointList="-788,-588,-788,-596" />
 
-<item itemtype="Connector" uid="connector-1922" startpinid="Bus-749-ePin3" endpinid="Demux-502-in2" pointList="-796,-744,-796,-752" />
+<item itemtype="Connector" uid="connector-2105" startpinid="Bus-744-ePin1" endpinid="Demux-501-in0" pointList="-780,-588,-780,-596" />
 
-<item itemtype="Connector" uid="connector-1923" startpinid="Bus-639-ePin0" endpinid="Node-756-0" pointList="-876,-564,-876,-564" />
+<item itemtype="Connector" uid="connector-2106" startpinid="Bus-749-ePin1" endpinid="Demux-502-in0" pointList="-780,-744,-780,-752" />
 
-<item itemtype="Connector" uid="connector-1924" startpinid="Bus-749-ePin0" endpinid="Node-756-1" pointList="-796,-736,-876,-736,-876,-564" />
+<item itemtype="Connector" uid="connector-2107" startpinid="Bus-749-ePin2" endpinid="Demux-502-in1" pointList="-788,-744,-788,-752" />
 
-<item itemtype="Connector" uid="connector-1925" startpinid="Node-756-2" endpinid="Bus-744-ePin0" pointList="-876,-564,-796,-564,-796,-580" />
+<item itemtype="Connector" uid="connector-2108" startpinid="Bus-749-ePin3" endpinid="Demux-502-in2" pointList="-796,-744,-796,-752" />
 
-<item itemtype="Connector" uid="connector-1926" startpinid="Buffer-867-out" endpinid="Node-358-0" pointList="-1056,-592,-1044,-592,-1044,-432,-1020,-432" />
+<item itemtype="Connector" uid="connector-2109" startpinid="Bus-639-ePin0" endpinid="Node-756-0" pointList="-876,-564,-876,-564" />
 
-<item itemtype="Connector" uid="connector-1927" startpinid="FlipFlopJK-324-in3" endpinid="Node-886-0" pointList="-920,-468,-920,-368,-924,-368" />
+<item itemtype="Connector" uid="connector-2110" startpinid="Bus-749-ePin0" endpinid="Node-756-1" pointList="-796,-736,-876,-736,-876,-564" />
 
-<item itemtype="Connector" uid="connector-1928" startpinid="Node-883-2" endpinid="FlipFlopJK-326-in3" pointList="-992,-368,-992,-468,-988,-468" />
+<item itemtype="Connector" uid="connector-2111" startpinid="Node-756-2" endpinid="Bus-744-ePin0" pointList="-876,-564,-796,-564,-796,-580" />
 
-<item itemtype="Connector" uid="connector-1929" startpinid="FlipFlopJK-325-in3" endpinid="Node-886-1" pointList="-828,-468,-828,-368,-924,-368" />
+<item itemtype="Connector" uid="connector-2112" startpinid="Buffer-867-out" endpinid="Node-358-0" pointList="-1056,-592,-1044,-592,-1044,-432,-1020,-432" />
 
-<item itemtype="Connector" uid="connector-1930" startpinid="Node-886-2" endpinid="Node-883-1" pointList="-924,-368,-992,-368" />
+<item itemtype="Connector" uid="connector-2113" startpinid="FlipFlopJK-324-in3" endpinid="Node-886-0" pointList="-920,-468,-920,-368,-924,-368" />
 
-<item itemtype="Connector" uid="connector-1931" startpinid="Bus-896-ePin1" endpinid="Node-1203-0" pointList="-752,-832,-756,-832" />
+<item itemtype="Connector" uid="connector-2114" startpinid="Node-883-2" endpinid="FlipFlopJK-326-in3" pointList="-992,-368,-992,-468,-988,-468" />
 
-<item itemtype="Connector" uid="connector-1932" startpinid="Bus-896-ePin2" endpinid="Demux-502-out1" pointList="-752,-824,-764,-824" />
+<item itemtype="Connector" uid="connector-2115" startpinid="FlipFlopJK-325-in3" endpinid="Node-886-1" pointList="-828,-468,-828,-368,-924,-368" />
 
-<item itemtype="Connector" uid="connector-1933" startpinid="Bus-896-ePin3" endpinid="Demux-502-out2" pointList="-752,-816,-764,-816" />
+<item itemtype="Connector" uid="connector-2116" startpinid="Node-886-2" endpinid="Node-883-1" pointList="-924,-368,-992,-368" />
 
-<item itemtype="Connector" uid="connector-1934" startpinid="Bus-896-ePin4" endpinid="Demux-502-out3" pointList="-752,-808,-764,-808" />
+<item itemtype="Connector" uid="connector-2117" startpinid="Bus-896-ePin1" endpinid="Node-1203-0" pointList="-752,-832,-756,-832" />
 
-<item itemtype="Connector" uid="connector-1935" startpinid="Bus-911-ePin1" endpinid="Node-1207-0" pointList="-752,-676,-760,-676" />
+<item itemtype="Connector" uid="connector-2118" startpinid="Bus-896-ePin2" endpinid="Demux-502-out1" pointList="-752,-824,-764,-824" />
 
-<item itemtype="Connector" uid="connector-1936" startpinid="Bus-911-ePin2" endpinid="Demux-501-out1" pointList="-752,-668,-764,-668" />
+<item itemtype="Connector" uid="connector-2119" startpinid="Bus-896-ePin3" endpinid="Demux-502-out2" pointList="-752,-816,-764,-816" />
 
-<item itemtype="Connector" uid="connector-1937" startpinid="Bus-911-ePin3" endpinid="Demux-501-out2" pointList="-752,-660,-764,-660" />
+<item itemtype="Connector" uid="connector-2120" startpinid="Bus-896-ePin4" endpinid="Demux-502-out3" pointList="-752,-808,-764,-808" />
 
-<item itemtype="Connector" uid="connector-1938" startpinid="Demux-501-out3" endpinid="Bus-911-ePin4" pointList="-764,-652,-752,-652" />
+<item itemtype="Connector" uid="connector-2121" startpinid="Bus-911-ePin1" endpinid="Node-1207-0" pointList="-752,-676,-760,-676" />
 
-<item itemtype="Connector" uid="connector-1939" startpinid="Bus-905-ePin1" endpinid="Node-1199-0" pointList="-688,-840,-688,-872,-660,-872" />
+<item itemtype="Connector" uid="connector-2122" startpinid="Bus-911-ePin2" endpinid="Demux-501-out1" pointList="-752,-668,-764,-668" />
 
-<item itemtype="Connector" uid="connector-1940" startpinid="Bus-917-ePin1" endpinid="FlipFlopD-888-in3" pointList="-688,-788,-680,-788,-680,-864,-648,-864" />
+<item itemtype="Connector" uid="connector-2123" startpinid="Bus-911-ePin3" endpinid="Demux-501-out2" pointList="-752,-660,-764,-660" />
 
-<item itemtype="Connector" uid="connector-1941" startpinid="Bus-905-ePin2" endpinid="FlipFlopD-889-in0" pointList="-688,-832,-648,-832,-648,-824" />
+<item itemtype="Connector" uid="connector-2124" startpinid="Demux-501-out3" endpinid="Bus-911-ePin4" pointList="-764,-652,-752,-652" />
 
-<item itemtype="Connector" uid="connector-1942" startpinid="FlipFlopD-889-in3" endpinid="Bus-917-ePin2" pointList="-648,-816,-676,-816,-676,-780,-688,-780" />
+<item itemtype="Connector" uid="connector-2125" startpinid="Bus-905-ePin1" endpinid="Node-1199-0" pointList="-688,-840,-688,-872,-660,-872" />
 
-<item itemtype="Connector" uid="connector-1943" startpinid="Bus-905-ePin3" endpinid="FlipFlopD-890-in0" pointList="-688,-824,-656,-824,-656,-780,-648,-780" />
+<item itemtype="Connector" uid="connector-2126" startpinid="Bus-917-ePin1" endpinid="FlipFlopD-888-in3" pointList="-688,-788,-680,-788,-680,-864,-648,-864" />
 
-<item itemtype="Connector" uid="connector-1944" startpinid="Bus-917-ePin3" endpinid="FlipFlopD-890-in3" pointList="-688,-772,-648,-772" />
+<item itemtype="Connector" uid="connector-2127" startpinid="Bus-905-ePin2" endpinid="FlipFlopD-889-in0" pointList="-688,-832,-648,-832,-648,-824" />
 
-<item itemtype="Connector" uid="connector-1945" startpinid="Bus-905-ePin4" endpinid="FlipFlopD-891-in0" pointList="-688,-816,-688,-796,-664,-796,-664,-736,-648,-736" />
+<item itemtype="Connector" uid="connector-2128" startpinid="FlipFlopD-889-in3" endpinid="Bus-917-ePin2" pointList="-648,-816,-676,-816,-676,-780,-688,-780" />
 
-<item itemtype="Connector" uid="connector-1946" startpinid="Bus-917-ePin4" endpinid="FlipFlopD-891-in3" pointList="-688,-764,-672,-764,-672,-728,-648,-728" />
+<item itemtype="Connector" uid="connector-2129" startpinid="Bus-905-ePin3" endpinid="FlipFlopD-890-in0" pointList="-688,-824,-656,-824,-656,-780,-648,-780" />
 
-<item itemtype="Connector" uid="connector-1947" startpinid="Bus-1049-ePin4" endpinid="FlipFlopD-1051-in0" pointList="-692,-624,-692,-604,-668,-604,-668,-544,-652,-544" />
+<item itemtype="Connector" uid="connector-2130" startpinid="Bus-917-ePin3" endpinid="FlipFlopD-890-in3" pointList="-688,-772,-648,-772" />
 
-<item itemtype="Connector" uid="connector-1948" startpinid="FlipFlopD-1047-in3" endpinid="Bus-1050-ePin2" pointList="-652,-624,-680,-624,-680,-588,-692,-588" />
+<item itemtype="Connector" uid="connector-2131" startpinid="Bus-905-ePin4" endpinid="FlipFlopD-891-in0" pointList="-688,-816,-688,-796,-664,-796,-664,-736,-648,-736" />
 
-<item itemtype="Connector" uid="connector-1949" startpinid="Bus-1050-ePin4" endpinid="FlipFlopD-1051-in3" pointList="-692,-572,-676,-572,-676,-536,-652,-536" />
+<item itemtype="Connector" uid="connector-2132" startpinid="Bus-917-ePin4" endpinid="FlipFlopD-891-in3" pointList="-688,-764,-672,-764,-672,-728,-648,-728" />
 
-<item itemtype="Connector" uid="connector-1950" startpinid="Bus-1049-ePin3" endpinid="FlipFlopD-1048-in0" pointList="-692,-632,-660,-632,-660,-588,-652,-588" />
+<item itemtype="Connector" uid="connector-2133" startpinid="Bus-1049-ePin4" endpinid="FlipFlopD-1051-in0" pointList="-692,-624,-692,-604,-668,-604,-668,-544,-652,-544" />
 
-<item itemtype="Connector" uid="connector-1951" startpinid="Bus-1049-ePin2" endpinid="FlipFlopD-1047-in0" pointList="-692,-640,-652,-640,-652,-632" />
+<item itemtype="Connector" uid="connector-2134" startpinid="FlipFlopD-1047-in3" endpinid="Bus-1050-ePin2" pointList="-652,-624,-680,-624,-680,-588,-692,-588" />
 
-<item itemtype="Connector" uid="connector-1952" startpinid="Bus-1049-ePin1" endpinid="FlipFlopD-1046-in0" pointList="-692,-648,-692,-680,-652,-680" />
+<item itemtype="Connector" uid="connector-2135" startpinid="Bus-1050-ePin4" endpinid="FlipFlopD-1051-in3" pointList="-692,-572,-676,-572,-676,-536,-652,-536" />
 
-<item itemtype="Connector" uid="connector-1953" startpinid="Bus-1050-ePin1" endpinid="FlipFlopD-1046-in3" pointList="-692,-596,-684,-596,-684,-672,-652,-672" />
+<item itemtype="Connector" uid="connector-2136" startpinid="Bus-1049-ePin3" endpinid="FlipFlopD-1048-in0" pointList="-692,-632,-660,-632,-660,-588,-652,-588" />
 
-<item itemtype="Connector" uid="connector-1954" startpinid="Bus-1050-ePin3" endpinid="FlipFlopD-1048-in3" pointList="-692,-580,-652,-580" />
+<item itemtype="Connector" uid="connector-2137" startpinid="Bus-1049-ePin2" endpinid="FlipFlopD-1047-in0" pointList="-692,-640,-652,-640,-652,-632" />
 
-<item itemtype="Connector" uid="connector-1955" startpinid="Bus-896-busPinI" endpinid="Bus-905-busPinI" pointList="-744,-832,-744,-840,-696,-840" />
+<item itemtype="Connector" uid="connector-2138" startpinid="Bus-1049-ePin1" endpinid="FlipFlopD-1046-in0" pointList="-692,-648,-692,-680,-652,-680" />
 
-<item itemtype="Connector" uid="connector-1956" startpinid="Bus-911-busPinI" endpinid="Bus-917-ePin0" pointList="-744,-676,-744,-764,-696,-764" />
+<item itemtype="Connector" uid="connector-2139" startpinid="Bus-1050-ePin1" endpinid="FlipFlopD-1046-in3" pointList="-692,-596,-684,-596,-684,-672,-652,-672" />
 
-<item itemtype="Connector" uid="connector-1957" startpinid="Bus-1062-ePin1" endpinid="Demux-502-out4" pointList="-752,-800,-764,-800" />
+<item itemtype="Connector" uid="connector-2140" startpinid="Bus-1050-ePin3" endpinid="FlipFlopD-1048-in3" pointList="-692,-580,-652,-580" />
 
-<item itemtype="Connector" uid="connector-1958" startpinid="Bus-1062-ePin2" endpinid="Demux-502-out5" pointList="-752,-792,-764,-792" />
+<item itemtype="Connector" uid="connector-2141" startpinid="Bus-896-busPinI" endpinid="Bus-905-busPinI" pointList="-744,-832,-744,-840,-696,-840" />
 
-<item itemtype="Connector" uid="connector-1959" startpinid="Bus-1062-ePin3" endpinid="Demux-502-out6" pointList="-752,-784,-764,-784" />
+<item itemtype="Connector" uid="connector-2142" startpinid="Bus-911-busPinI" endpinid="Bus-917-ePin0" pointList="-744,-676,-744,-764,-696,-764" />
 
-<item itemtype="Connector" uid="connector-1960" startpinid="Bus-1062-ePin4" endpinid="Demux-502-out7" pointList="-752,-776,-764,-776" />
+<item itemtype="Connector" uid="connector-2143" startpinid="Bus-1062-ePin1" endpinid="Demux-502-out4" pointList="-752,-800,-764,-800" />
 
-<item itemtype="Connector" uid="connector-1961" startpinid="Bus-1049-busPinI" endpinid="Bus-1062-ePin0" pointList="-700,-648,-700,-748,-720,-748,-720,-776,-744,-776" />
+<item itemtype="Connector" uid="connector-2144" startpinid="Bus-1062-ePin2" endpinid="Demux-502-out5" pointList="-752,-792,-764,-792" />
 
-<item itemtype="Connector" uid="connector-1962" startpinid="Bus-1068-ePin1" endpinid="Demux-501-out4" pointList="-752,-644,-764,-644" />
+<item itemtype="Connector" uid="connector-2145" startpinid="Bus-1062-ePin3" endpinid="Demux-502-out6" pointList="-752,-784,-764,-784" />
 
-<item itemtype="Connector" uid="connector-1963" startpinid="Demux-501-out5" endpinid="Bus-1068-ePin2" pointList="-764,-636,-752,-636" />
+<item itemtype="Connector" uid="connector-2146" startpinid="Bus-1062-ePin4" endpinid="Demux-502-out7" pointList="-752,-776,-764,-776" />
 
-<item itemtype="Connector" uid="connector-1964" startpinid="Demux-501-out6" endpinid="Bus-1068-ePin3" pointList="-764,-628,-752,-628" />
+<item itemtype="Connector" uid="connector-2147" startpinid="Bus-1049-busPinI" endpinid="Bus-1062-ePin0" pointList="-700,-648,-700,-748,-720,-748,-720,-776,-744,-776" />
 
-<item itemtype="Connector" uid="connector-1965" startpinid="Bus-1068-ePin4" endpinid="Demux-501-out7" pointList="-752,-620,-764,-620" />
+<item itemtype="Connector" uid="connector-2148" startpinid="Bus-1068-ePin1" endpinid="Demux-501-out4" pointList="-752,-644,-764,-644" />
 
-<item itemtype="Connector" uid="connector-1966" startpinid="Bus-1050-busPinI" endpinid="Bus-1068-ePin0" pointList="-700,-596,-744,-596,-744,-620" />
+<item itemtype="Connector" uid="connector-2149" startpinid="Demux-501-out5" endpinid="Bus-1068-ePin2" pointList="-764,-636,-752,-636" />
 
-<item itemtype="Connector" uid="connector-1967" startpinid="BcdTo7S-1084-out5" endpinid="ResistorDip-1082-resistor5-ePin10" pointList="-396,-780,-364,-780" />
+<item itemtype="Connector" uid="connector-2150" startpinid="Demux-501-out6" endpinid="Bus-1068-ePin3" pointList="-764,-628,-752,-628" />
 
-<item itemtype="Connector" uid="connector-1968" startpinid="Node-1081-2" endpinid="Seven Segment-1087-pin_a" pointList="-188,-820,-168,-820" />
+<item itemtype="Connector" uid="connector-2151" startpinid="Bus-1068-ePin4" endpinid="Demux-501-out7" pointList="-752,-620,-764,-620" />
 
-<item itemtype="Connector" uid="connector-1969" startpinid="BcdTo7S-1084-out4" endpinid="ResistorDip-1082-resistor4-ePin8" pointList="-396,-788,-364,-788" />
+<item itemtype="Connector" uid="connector-2152" startpinid="Bus-1050-busPinI" endpinid="Bus-1068-ePin0" pointList="-700,-596,-744,-596,-744,-620" />
 
-<item itemtype="Connector" uid="connector-1970" startpinid="BcdTo7S-1084-out0" endpinid="Node-1085-0" pointList="-396,-820,-380,-820" />
+<item itemtype="Connector" uid="connector-2153" startpinid="BcdTo7S-1084-out5" endpinid="ResistorDip-1082-resistor5-ePin10" pointList="-396,-780,-364,-780" />
 
-<item itemtype="Connector" uid="connector-1971" startpinid="ResistorDip-1082-resistor3-ePin7" endpinid="Seven Segment-1087-pin_d" pointList="-332,-796,-168,-796" />
+<item itemtype="Connector" uid="connector-2154" startpinid="Node-1081-2" endpinid="Seven Segment-1087-pin_a" pointList="-188,-820,-168,-820" />
 
-<item itemtype="Connector" uid="connector-1972" startpinid="Ground-1080-Gnd" endpinid="Seven Segment-1087-pin_commona" pointList="-136,-752,-136,-764" />
+<item itemtype="Connector" uid="connector-2155" startpinid="BcdTo7S-1084-out4" endpinid="ResistorDip-1082-resistor4-ePin8" pointList="-396,-788,-364,-788" />
 
-<item itemtype="Connector" uid="connector-1973" startpinid="Node-1085-2" endpinid="ResistorDip-1082-resistor0-ePin0" pointList="-380,-820,-364,-820" />
+<item itemtype="Connector" uid="connector-2156" startpinid="BcdTo7S-1084-out0" endpinid="Node-1085-0" pointList="-396,-820,-380,-820" />
 
-<item itemtype="Connector" uid="connector-1974" startpinid="BcdTo7S-1084-out6" endpinid="ResistorDip-1082-resistor6-ePin12" pointList="-396,-772,-364,-772" />
+<item itemtype="Connector" uid="connector-2157" startpinid="ResistorDip-1082-resistor3-ePin7" endpinid="Seven Segment-1087-pin_d" pointList="-332,-796,-168,-796" />
 
-<item itemtype="Connector" uid="connector-1975" startpinid="Probe-1079-inpin" endpinid="Node-1085-1" pointList="-380,-856,-380,-820" />
+<item itemtype="Connector" uid="connector-2158" startpinid="Ground-1080-Gnd" endpinid="Seven Segment-1087-pin_commona" pointList="-136,-752,-136,-764" />
 
-<item itemtype="Connector" uid="connector-1976" startpinid="ResistorDip-1082-resistor6-ePin13" endpinid="Seven Segment-1087-pin_g" pointList="-332,-772,-168,-772" />
+<item itemtype="Connector" uid="connector-2159" startpinid="Node-1085-2" endpinid="ResistorDip-1082-resistor0-ePin0" pointList="-380,-820,-364,-820" />
 
-<item itemtype="Connector" uid="connector-1977" startpinid="ResistorDip-1082-resistor4-ePin9" endpinid="Seven Segment-1087-pin_e" pointList="-332,-788,-168,-788" />
+<item itemtype="Connector" uid="connector-2160" startpinid="BcdTo7S-1084-out6" endpinid="ResistorDip-1082-resistor6-ePin12" pointList="-396,-772,-364,-772" />
 
-<item itemtype="Connector" uid="connector-1978" startpinid="ResistorDip-1082-resistor5-ePin11" endpinid="Seven Segment-1087-pin_f" pointList="-332,-780,-168,-780" />
+<item itemtype="Connector" uid="connector-2161" startpinid="Probe-1079-inpin" endpinid="Node-1085-1" pointList="-380,-856,-380,-820" />
 
-<item itemtype="Connector" uid="connector-1979" startpinid="Amperimeter-1078-rPin" endpinid="Node-1081-0" pointList="-236,-820,-188,-820" />
+<item itemtype="Connector" uid="connector-2162" startpinid="ResistorDip-1082-resistor6-ePin13" endpinid="Seven Segment-1087-pin_g" pointList="-332,-772,-168,-772" />
 
-<item itemtype="Connector" uid="connector-1980" startpinid="BcdTo7S-1084-out3" endpinid="ResistorDip-1082-resistor3-ePin6" pointList="-396,-796,-364,-796" />
+<item itemtype="Connector" uid="connector-2163" startpinid="ResistorDip-1082-resistor4-ePin9" endpinid="Seven Segment-1087-pin_e" pointList="-332,-788,-168,-788" />
 
-<item itemtype="Connector" uid="connector-1981" startpinid="Probe-1086-inpin" endpinid="Node-1081-1" pointList="-188,-872,-188,-820" />
+<item itemtype="Connector" uid="connector-2164" startpinid="ResistorDip-1082-resistor5-ePin11" endpinid="Seven Segment-1087-pin_f" pointList="-332,-780,-168,-780" />
 
-<item itemtype="Connector" uid="connector-1982" startpinid="ResistorDip-1082-resistor1-ePin3" endpinid="Seven Segment-1087-pin_b" pointList="-332,-812,-168,-812" />
+<item itemtype="Connector" uid="connector-2165" startpinid="Amperimeter-1078-rPin" endpinid="Node-1081-0" pointList="-236,-820,-188,-820" />
 
-<item itemtype="Connector" uid="connector-1983" startpinid="BcdTo7S-1084-out2" endpinid="ResistorDip-1082-resistor2-ePin4" pointList="-396,-804,-364,-804" />
+<item itemtype="Connector" uid="connector-2166" startpinid="BcdTo7S-1084-out3" endpinid="ResistorDip-1082-resistor3-ePin6" pointList="-396,-796,-364,-796" />
 
-<item itemtype="Connector" uid="connector-1984" startpinid="ResistorDip-1082-resistor0-ePin1" endpinid="Amperimeter-1078-lPin" pointList="-332,-820,-252,-820" />
+<item itemtype="Connector" uid="connector-2167" startpinid="Probe-1086-inpin" endpinid="Node-1081-1" pointList="-188,-872,-188,-820" />
 
-<item itemtype="Connector" uid="connector-1985" startpinid="ResistorDip-1082-resistor2-ePin5" endpinid="Seven Segment-1087-pin_c" pointList="-332,-804,-168,-804" />
+<item itemtype="Connector" uid="connector-2168" startpinid="ResistorDip-1082-resistor1-ePin3" endpinid="Seven Segment-1087-pin_b" pointList="-332,-812,-168,-812" />
 
-<item itemtype="Connector" uid="connector-1986" startpinid="BcdTo7S-1084-out1" endpinid="ResistorDip-1082-resistor1-ePin2" pointList="-396,-812,-364,-812" />
+<item itemtype="Connector" uid="connector-2169" startpinid="BcdTo7S-1084-out2" endpinid="ResistorDip-1082-resistor2-ePin4" pointList="-396,-804,-364,-804" />
 
-<item itemtype="Connector" uid="connector-1987" startpinid="BcdTo7S-1084-in2" endpinid="Node-1163-0" pointList="-444,-788,-496,-788" />
+<item itemtype="Connector" uid="connector-2170" startpinid="ResistorDip-1082-resistor0-ePin1" endpinid="Amperimeter-1078-lPin" pointList="-332,-820,-252,-820" />
 
-<item itemtype="Connector" uid="connector-1988" startpinid="BcdTo7S-1125-out5" endpinid="ResistorDip-1123-resistor5-ePin10" pointList="-408,-576,-376,-576" />
+<item itemtype="Connector" uid="connector-2171" startpinid="ResistorDip-1082-resistor2-ePin5" endpinid="Seven Segment-1087-pin_c" pointList="-332,-804,-168,-804" />
 
-<item itemtype="Connector" uid="connector-1989" startpinid="Node-1122-2" endpinid="Seven Segment-1128-pin_a" pointList="-200,-616,-168,-616" />
+<item itemtype="Connector" uid="connector-2172" startpinid="BcdTo7S-1084-out1" endpinid="ResistorDip-1082-resistor1-ePin2" pointList="-396,-812,-364,-812" />
 
-<item itemtype="Connector" uid="connector-1990" startpinid="BcdTo7S-1125-out4" endpinid="ResistorDip-1123-resistor4-ePin8" pointList="-408,-584,-376,-584" />
+<item itemtype="Connector" uid="connector-2173" startpinid="BcdTo7S-1084-in2" endpinid="Node-1163-0" pointList="-444,-788,-496,-788" />
 
-<item itemtype="Connector" uid="connector-1991" startpinid="BcdTo7S-1125-out0" endpinid="Node-1126-0" pointList="-408,-616,-392,-616" />
+<item itemtype="Connector" uid="connector-2174" startpinid="BcdTo7S-1125-out5" endpinid="ResistorDip-1123-resistor5-ePin10" pointList="-408,-576,-376,-576" />
 
-<item itemtype="Connector" uid="connector-1992" startpinid="ResistorDip-1123-resistor3-ePin7" endpinid="Seven Segment-1128-pin_d" pointList="-344,-592,-168,-592" />
+<item itemtype="Connector" uid="connector-2175" startpinid="Node-1122-2" endpinid="Seven Segment-1128-pin_a" pointList="-200,-616,-168,-616" />
 
-<item itemtype="Connector" uid="connector-1993" startpinid="Ground-1121-Gnd" endpinid="Seven Segment-1128-pin_commona" pointList="-136,-548,-136,-560" />
+<item itemtype="Connector" uid="connector-2176" startpinid="BcdTo7S-1125-out4" endpinid="ResistorDip-1123-resistor4-ePin8" pointList="-408,-584,-376,-584" />
 
-<item itemtype="Connector" uid="connector-1994" startpinid="Node-1126-2" endpinid="ResistorDip-1123-resistor0-ePin0" pointList="-392,-616,-376,-616" />
+<item itemtype="Connector" uid="connector-2177" startpinid="BcdTo7S-1125-out0" endpinid="Node-1126-0" pointList="-408,-616,-392,-616" />
 
-<item itemtype="Connector" uid="connector-1995" startpinid="BcdTo7S-1125-out6" endpinid="ResistorDip-1123-resistor6-ePin12" pointList="-408,-568,-376,-568" />
+<item itemtype="Connector" uid="connector-2178" startpinid="ResistorDip-1123-resistor3-ePin7" endpinid="Seven Segment-1128-pin_d" pointList="-344,-592,-168,-592" />
 
-<item itemtype="Connector" uid="connector-1996" startpinid="Probe-1120-inpin" endpinid="Node-1126-1" pointList="-392,-652,-392,-616" />
+<item itemtype="Connector" uid="connector-2179" startpinid="Ground-1121-Gnd" endpinid="Seven Segment-1128-pin_commona" pointList="-136,-548,-136,-560" />
 
-<item itemtype="Connector" uid="connector-1997" startpinid="And Gate-1130-out" endpinid="BcdTo7S-1125-in4" pointList="-464,-656,-440,-656,-440,-632" />
+<item itemtype="Connector" uid="connector-2180" startpinid="Node-1126-2" endpinid="ResistorDip-1123-resistor0-ePin0" pointList="-392,-616,-376,-616" />
 
-<item itemtype="Connector" uid="connector-1998" startpinid="ResistorDip-1123-resistor6-ePin13" endpinid="Seven Segment-1128-pin_g" pointList="-344,-568,-168,-568" />
+<item itemtype="Connector" uid="connector-2181" startpinid="BcdTo7S-1125-out6" endpinid="ResistorDip-1123-resistor6-ePin12" pointList="-408,-568,-376,-568" />
 
-<item itemtype="Connector" uid="connector-1999" startpinid="ResistorDip-1123-resistor4-ePin9" endpinid="Seven Segment-1128-pin_e" pointList="-344,-584,-168,-584" />
+<item itemtype="Connector" uid="connector-2182" startpinid="Probe-1120-inpin" endpinid="Node-1126-1" pointList="-392,-652,-392,-616" />
 
-<item itemtype="Connector" uid="connector-2000" startpinid="ResistorDip-1123-resistor5-ePin11" endpinid="Seven Segment-1128-pin_f" pointList="-344,-576,-168,-576" />
+<item itemtype="Connector" uid="connector-2183" startpinid="And Gate-1130-out" endpinid="BcdTo7S-1125-in4" pointList="-464,-656,-440,-656,-440,-632" />
 
-<item itemtype="Connector" uid="connector-2001" startpinid="Amperimeter-1119-rPin" endpinid="Node-1122-0" pointList="-248,-616,-200,-616" />
+<item itemtype="Connector" uid="connector-2184" startpinid="ResistorDip-1123-resistor6-ePin13" endpinid="Seven Segment-1128-pin_g" pointList="-344,-568,-168,-568" />
 
-<item itemtype="Connector" uid="connector-2002" startpinid="BcdTo7S-1125-out3" endpinid="ResistorDip-1123-resistor3-ePin6" pointList="-408,-592,-376,-592" />
+<item itemtype="Connector" uid="connector-2185" startpinid="ResistorDip-1123-resistor4-ePin9" endpinid="Seven Segment-1128-pin_e" pointList="-344,-584,-168,-584" />
 
-<item itemtype="Connector" uid="connector-2003" startpinid="Probe-1127-inpin" endpinid="Node-1122-1" pointList="-200,-668,-200,-616" />
+<item itemtype="Connector" uid="connector-2186" startpinid="ResistorDip-1123-resistor5-ePin11" endpinid="Seven Segment-1128-pin_f" pointList="-344,-576,-168,-576" />
 
-<item itemtype="Connector" uid="connector-2004" startpinid="ResistorDip-1123-resistor1-ePin3" endpinid="Seven Segment-1128-pin_b" pointList="-344,-608,-168,-608" />
+<item itemtype="Connector" uid="connector-2187" startpinid="Amperimeter-1119-rPin" endpinid="Node-1122-0" pointList="-248,-616,-200,-616" />
 
-<item itemtype="Connector" uid="connector-2005" startpinid="BcdTo7S-1125-out2" endpinid="ResistorDip-1123-resistor2-ePin4" pointList="-408,-600,-376,-600" />
+<item itemtype="Connector" uid="connector-2188" startpinid="BcdTo7S-1125-out3" endpinid="ResistorDip-1123-resistor3-ePin6" pointList="-408,-592,-376,-592" />
 
-<item itemtype="Connector" uid="connector-2006" startpinid="ResistorDip-1123-resistor0-ePin1" endpinid="Amperimeter-1119-lPin" pointList="-344,-616,-264,-616" />
+<item itemtype="Connector" uid="connector-2189" startpinid="Probe-1127-inpin" endpinid="Node-1122-1" pointList="-200,-668,-200,-616" />
 
-<item itemtype="Connector" uid="connector-2007" startpinid="ResistorDip-1123-resistor2-ePin5" endpinid="Seven Segment-1128-pin_c" pointList="-344,-600,-168,-600" />
+<item itemtype="Connector" uid="connector-2190" startpinid="ResistorDip-1123-resistor1-ePin3" endpinid="Seven Segment-1128-pin_b" pointList="-344,-608,-168,-608" />
 
-<item itemtype="Connector" uid="connector-2008" startpinid="BcdTo7S-1125-out1" endpinid="ResistorDip-1123-resistor1-ePin2" pointList="-408,-608,-376,-608" />
+<item itemtype="Connector" uid="connector-2191" startpinid="BcdTo7S-1125-out2" endpinid="ResistorDip-1123-resistor2-ePin4" pointList="-408,-600,-376,-600" />
 
-<item itemtype="Connector" uid="connector-2009" startpinid="BcdTo7S-1125-in2" endpinid="Node-1171-0" pointList="-456,-584,-508,-584" />
+<item itemtype="Connector" uid="connector-2192" startpinid="ResistorDip-1123-resistor0-ePin1" endpinid="Amperimeter-1119-lPin" pointList="-344,-616,-264,-616" />
 
-<item itemtype="Connector" uid="connector-2010" startpinid="BcdTo7S-1125-in3" endpinid="Node-1174-0" pointList="-456,-576,-496,-576" />
+<item itemtype="Connector" uid="connector-2193" startpinid="ResistorDip-1123-resistor2-ePin5" endpinid="Seven Segment-1128-pin_c" pointList="-344,-600,-168,-600" />
 
-<item itemtype="Connector" uid="connector-2011" startpinid="FlipFlopD-888-out0" endpinid="Node-1195-0" pointList="-608,-872,-588,-872" />
+<item itemtype="Connector" uid="connector-2194" startpinid="BcdTo7S-1125-out1" endpinid="ResistorDip-1123-resistor1-ePin2" pointList="-408,-608,-376,-608" />
 
-<item itemtype="Connector" uid="connector-2012" startpinid="FlipFlopD-889-out0" endpinid="BcdTo7S-1084-in1" pointList="-608,-824,-552,-824,-552,-796,-444,-796" />
+<item itemtype="Connector" uid="connector-2195" startpinid="BcdTo7S-1125-in2" endpinid="Node-1171-0" pointList="-456,-584,-508,-584" />
 
-<item itemtype="Connector" uid="connector-2013" startpinid="FlipFlopD-890-out0" endpinid="Node-1163-1" pointList="-608,-780,-496,-780,-496,-788" />
+<item itemtype="Connector" uid="connector-2196" startpinid="BcdTo7S-1125-in3" endpinid="Node-1174-0" pointList="-456,-576,-496,-576" />
 
-<item itemtype="Connector" uid="connector-2014" startpinid="Node-1163-2" endpinid="And Gate-1089-in0" pointList="-496,-788,-496,-864,-484,-864" />
+<item itemtype="Connector" uid="connector-2197" startpinid="FlipFlopD-888-out0" endpinid="Node-1195-0" pointList="-608,-872,-588,-872" />
 
-<item itemtype="Connector" uid="connector-2015" startpinid="FlipFlopD-1046-out0" endpinid="BcdTo7S-1125-in0" pointList="-612,-680,-540,-680,-540,-600,-456,-600" />
+<item itemtype="Connector" uid="connector-2198" startpinid="FlipFlopD-889-out0" endpinid="BcdTo7S-1084-in1" pointList="-608,-824,-552,-824,-552,-796,-444,-796" />
 
-<item itemtype="Connector" uid="connector-2016" startpinid="FlipFlopD-1047-out0" endpinid="BcdTo7S-1125-in1" pointList="-612,-632,-552,-632,-552,-592,-456,-592" />
+<item itemtype="Connector" uid="connector-2199" startpinid="FlipFlopD-890-out0" endpinid="Node-1163-1" pointList="-608,-780,-496,-780,-496,-788" />
 
-<item itemtype="Connector" uid="connector-2017" startpinid="FlipFlopD-1048-out0" endpinid="Node-2069-0" pointList="-612,-588,-564,-588,-564,-576,-556,-576" />
+<item itemtype="Connector" uid="connector-2200" startpinid="Node-1163-2" endpinid="And Gate-1089-in0" pointList="-496,-788,-496,-864,-484,-864" />
 
-<item itemtype="Connector" uid="connector-2018" startpinid="Node-1171-2" endpinid="And Gate-1130-in0" pointList="-508,-584,-508,-660,-496,-660" />
+<item itemtype="Connector" uid="connector-2201" startpinid="FlipFlopD-1046-out0" endpinid="BcdTo7S-1125-in0" pointList="-612,-680,-540,-680,-540,-600,-456,-600" />
 
-<item itemtype="Connector" uid="connector-2019" startpinid="FlipFlopD-1051-out0" endpinid="Node-2065-0" pointList="-612,-544,-496,-544" />
+<item itemtype="Connector" uid="connector-2202" startpinid="FlipFlopD-1047-out0" endpinid="BcdTo7S-1125-in1" pointList="-612,-632,-552,-632,-552,-592,-456,-592" />
 
-<item itemtype="Connector" uid="connector-2020" startpinid="Node-1174-2" endpinid="And Gate-1130-in1" pointList="-496,-576,-496,-652" />
+<item itemtype="Connector" uid="connector-2203" startpinid="FlipFlopD-1048-out0" endpinid="Node-2069-0" pointList="-612,-588,-564,-588,-564,-576,-556,-576" />
 
-<item itemtype="Connector" uid="connector-2021" startpinid="Bus-1179-ePin1" endpinid="Probe-1176-inpin" pointList="-728,-400,-728,-424,-752,-424" />
+<item itemtype="Connector" uid="connector-2204" startpinid="Node-1171-2" endpinid="And Gate-1130-in0" pointList="-508,-584,-508,-660,-496,-660" />
 
-<item itemtype="Connector" uid="connector-2022" startpinid="Bus-1179-ePin2" endpinid="Probe-1177-inpin" pointList="-720,-400,-720,-424,-696,-424" />
+<item itemtype="Connector" uid="connector-2205" startpinid="FlipFlopD-1051-out0" endpinid="Node-2065-0" pointList="-612,-544,-496,-544" />
 
-<item itemtype="Connector" uid="connector-2023" startpinid="Bus-1179-ePin3" endpinid="Probe-1178-inpin" pointList="-712,-400,-712,-412,-644,-412,-644,-424" />
+<item itemtype="Connector" uid="connector-2206" startpinid="Node-1174-2" endpinid="And Gate-1130-in1" pointList="-496,-576,-496,-652" />
 
-<item itemtype="Connector" uid="connector-2024" startpinid="Bus-744-busPinI" endpinid="Bus-1179-busPinI" pointList="-780,-580,-780,-392,-728,-392" />
+<item itemtype="Connector" uid="connector-2207" startpinid="Bus-1179-ePin1" endpinid="Probe-1176-inpin" pointList="-728,-400,-728,-424,-752,-424" />
 
-<item itemtype="Connector" uid="connector-2025" startpinid="BcdTo7S-1084-in3" endpinid="Node-1192-0" pointList="-444,-780,-484,-780" />
+<item itemtype="Connector" uid="connector-2208" startpinid="Bus-1179-ePin2" endpinid="Probe-1177-inpin" pointList="-720,-400,-720,-424,-696,-424" />
 
-<item itemtype="Connector" uid="connector-2026" startpinid="FlipFlopD-891-out0" endpinid="Node-1192-1" pointList="-608,-736,-484,-736,-484,-780" />
+<item itemtype="Connector" uid="connector-2209" startpinid="Bus-1179-ePin3" endpinid="Probe-1178-inpin" pointList="-712,-400,-712,-412,-644,-412,-644,-424" />
 
-<item itemtype="Connector" uid="connector-2027" startpinid="Node-1192-2" endpinid="And Gate-1089-in1" pointList="-484,-780,-484,-856" />
+<item itemtype="Connector" uid="connector-2210" startpinid="Bus-744-busPinI" endpinid="Bus-1179-busPinI" pointList="-780,-580,-780,-392,-728,-392" />
 
-<item itemtype="Connector" uid="connector-2028" startpinid="Probe-1187-inpin" endpinid="Node-1195-1" pointList="-592,-964,-592,-872,-588,-872" />
+<item itemtype="Connector" uid="connector-2211" startpinid="BcdTo7S-1084-in3" endpinid="Node-1192-0" pointList="-444,-780,-484,-780" />
 
-<item itemtype="Connector" uid="connector-2029" startpinid="Node-1195-2" endpinid="BcdTo7S-1084-in0" pointList="-588,-872,-544,-872,-544,-804,-444,-804" />
+<item itemtype="Connector" uid="connector-2212" startpinid="FlipFlopD-891-out0" endpinid="Node-1192-1" pointList="-608,-736,-484,-736,-484,-780" />
 
-<item itemtype="Connector" uid="connector-2030" startpinid="Probe-1197-inpin" endpinid="Node-1199-1" pointList="-660,-980,-660,-872" />
+<item itemtype="Connector" uid="connector-2213" startpinid="Node-1192-2" endpinid="And Gate-1089-in1" pointList="-484,-780,-484,-856" />
 
-<item itemtype="Connector" uid="connector-2031" startpinid="Node-1199-2" endpinid="FlipFlopD-888-in0" pointList="-660,-872,-648,-872" />
+<item itemtype="Connector" uid="connector-2214" startpinid="Probe-1187-inpin" endpinid="Node-1195-1" pointList="-592,-964,-592,-872,-588,-872" />
 
-<item itemtype="Connector" uid="connector-2032" startpinid="Probe-1201-inpin" endpinid="Node-1203-1" pointList="-748,-920,-748,-868,-756,-868,-756,-832" />
+<item itemtype="Connector" uid="connector-2215" startpinid="Node-1195-2" endpinid="BcdTo7S-1084-in0" pointList="-588,-872,-544,-872,-544,-804,-444,-804" />
 
-<item itemtype="Connector" uid="connector-2033" startpinid="Node-1203-2" endpinid="Demux-502-out0" pointList="-756,-832,-764,-832" />
+<item itemtype="Connector" uid="connector-2216" startpinid="Probe-1197-inpin" endpinid="Node-1199-1" pointList="-660,-980,-660,-872" />
 
-<item itemtype="Connector" uid="connector-2034" startpinid="Probe-1205-inpin" endpinid="Node-1207-1" pointList="-732,-708,-760,-708,-760,-676" />
+<item itemtype="Connector" uid="connector-2217" startpinid="Node-1199-2" endpinid="FlipFlopD-888-in0" pointList="-660,-872,-648,-872" />
 
-<item itemtype="Connector" uid="connector-2035" startpinid="Node-1207-2" endpinid="Demux-501-out0" pointList="-760,-676,-764,-676" />
+<item itemtype="Connector" uid="connector-2218" startpinid="Probe-1201-inpin" endpinid="Node-1203-1" pointList="-748,-920,-748,-868,-756,-868,-756,-832" />
 
-<item itemtype="Connector" uid="connector-2036" startpinid="And Gate-1089-out" endpinid="Node-2060-0" pointList="-452,-860,-436,-860" />
+<item itemtype="Connector" uid="connector-2219" startpinid="Node-1203-2" endpinid="Demux-502-out0" pointList="-756,-832,-764,-832" />
 
-<item itemtype="Connector" uid="connector-2043" startpinid="Push-1739-pinP0" endpinid="Fixed Voltage-1738-outnod" pointList="-1260,-648,-1260,-644,-1276,-644" />
+<item itemtype="Connector" uid="connector-2220" startpinid="Probe-1205-inpin" endpinid="Node-1207-1" pointList="-732,-708,-760,-708,-760,-676" />
 
-<item itemtype="Connector" uid="Connector-2047" startpinid="p12F683-1895-PORTP1" endpinid="Node-2048-1" pointList="-1124,-792,-1056,-792,-1056,-644" />
+<item itemtype="Connector" uid="connector-2221" startpinid="Node-1207-2" endpinid="Demux-501-out0" pointList="-760,-676,-764,-676" />
 
-<item itemtype="Connector" uid="Connector-2049" startpinid="Node-2048-2" endpinid="Node-2073-0" pointList="-1056,-644,-956,-644" />
+<item itemtype="Connector" uid="connector-2222" startpinid="And Gate-1089-out" endpinid="Node-2060-0" pointList="-452,-860,-436,-860" />
 
-<item itemtype="Connector" uid="connector-2044" startpinid="Push-1739-switch0pinN" endpinid="p12F683-1895-PORTP3" pointList="-1228,-648,-1228,-784,-1172,-784" />
+<item itemtype="Connector" uid="connector-2223" startpinid="Push-1739-pinP0" endpinid="Fixed Voltage-1738-outnod" pointList="-1372,-784,-1372,-780,-1388,-780" />
 
-<item itemtype="Connector" uid="Connector-2050" startpinid="p12F683-1895-PORTP2" endpinid="Node-883-0" pointList="-1124,-784,-1124,-656,-1152,-656,-1152,-416,-1068,-416,-1068,-368,-992,-368" />
+<item itemtype="Connector" uid="connector-2224" startpinid="p12F683-1895-PORTP1" endpinid="Node-2048-1" pointList="-1124,-792,-1056,-792,-1056,-644" />
 
-<item itemtype="Connector" uid="connector-2039" startpinid="Buffer-867-in0" endpinid="Node-2048-0" pointList="-1088,-592,-1092,-592,-1092,-644,-1056,-644" />
+<item itemtype="Connector" uid="connector-2225" startpinid="Node-2048-2" endpinid="Node-2073-0" pointList="-1056,-644,-956,-644" />
 
-<item itemtype="Connector" uid="Connector-2059" startpinid="Probe-2058-inpin" endpinid="Node-2060-1" pointList="-424,-960,-424,-860,-436,-860" />
+<item itemtype="Connector" uid="connector-2227" startpinid="p12F683-1895-PORTP2" endpinid="Node-883-0" pointList="-1124,-784,-1124,-656,-1152,-656,-1152,-416,-1068,-416,-1068,-368,-992,-368" />
 
-<item itemtype="Connector" uid="Connector-2061" startpinid="Node-2060-2" endpinid="BcdTo7S-1084-in4" pointList="-436,-860,-428,-860,-428,-836" />
+<item itemtype="Connector" uid="connector-2228" startpinid="Buffer-867-in0" endpinid="Node-2048-0" pointList="-1088,-592,-1092,-592,-1092,-644,-1056,-644" />
 
-<item itemtype="Connector" uid="Connector-2064" startpinid="Probe-2062-inpin" endpinid="Node-2065-1" pointList="-464,-492,-496,-492,-496,-544" />
+<item itemtype="Connector" uid="connector-2229" startpinid="Probe-2058-inpin" endpinid="Node-2060-1" pointList="-424,-960,-424,-860,-436,-860" />
 
-<item itemtype="Connector" uid="Connector-2066" startpinid="Node-2065-2" endpinid="Node-1174-1" pointList="-496,-544,-496,-576" />
+<item itemtype="Connector" uid="connector-2230" startpinid="Node-2060-2" endpinid="BcdTo7S-1084-in4" pointList="-436,-860,-428,-860,-428,-836" />
 
-<item itemtype="Connector" uid="Connector-2068" startpinid="Probe-2067-inpin" endpinid="Node-2069-1" pointList="-536,-452,-556,-452,-556,-576" />
+<item itemtype="Connector" uid="connector-2231" startpinid="Probe-2062-inpin" endpinid="Node-2065-1" pointList="-464,-492,-496,-492,-496,-544" />
 
-<item itemtype="Connector" uid="Connector-2070" startpinid="Node-2069-2" endpinid="Node-1171-1" pointList="-556,-576,-508,-576,-508,-584" />
+<item itemtype="Connector" uid="connector-2232" startpinid="Node-2065-2" endpinid="Node-1174-1" pointList="-496,-544,-496,-576" />
 
-<item itemtype="Connector" uid="Connector-2072" startpinid="Probe-2071-inpin" endpinid="Node-2073-1" pointList="-956,-896,-956,-644" />
+<item itemtype="Connector" uid="connector-2233" startpinid="Probe-2067-inpin" endpinid="Node-2069-1" pointList="-536,-452,-556,-452,-556,-576" />
 
-<item itemtype="Connector" uid="Connector-2074" startpinid="Node-2073-2" endpinid="Demux-501-in3" pointList="-956,-644,-812,-644" />
+<item itemtype="Connector" uid="connector-2234" startpinid="Node-2069-2" endpinid="Node-1171-1" pointList="-556,-576,-508,-576,-508,-584" />
 
-<item itemtype="Connector" uid="Connector-2046" startpinid="Demux-502-in3" endpinid="Node-2081-0" pointList="-812,-800,-1020,-800" />
+<item itemtype="Connector" uid="connector-2235" startpinid="Probe-2071-inpin" endpinid="Node-2073-1" pointList="-956,-896,-956,-644" />
 
-<item itemtype="Connector" uid="Connector-2080" startpinid="Probe-2079-inpin" endpinid="Node-2081-1" pointList="-1020,-868,-1020,-800" />
+<item itemtype="Connector" uid="connector-2236" startpinid="Node-2073-2" endpinid="Demux-501-in3" pointList="-956,-644,-812,-644" />
 
-<item itemtype="Connector" uid="Connector-2082" startpinid="Node-2081-2" endpinid="p12F683-1895-PORTP0" pointList="-1020,-800,-1124,-800" />
+<item itemtype="Connector" uid="connector-2237" startpinid="Demux-502-in3" endpinid="Node-2081-0" pointList="-812,-800,-1020,-800" />
+
+<item itemtype="Connector" uid="connector-2238" startpinid="Probe-2079-inpin" endpinid="Node-2081-1" pointList="-1020,-868,-1020,-800" />
+
+<item itemtype="Connector" uid="connector-2239" startpinid="Node-2081-2" endpinid="p12F683-1895-PORTP0" pointList="-1020,-800,-1124,-800" />
+
+<item itemtype="Connector" uid="Connector-2246" startpinid="p12F683-1895-PORTP3" endpinid="Node-2251-0" pointList="-1172,-784,-1200,-784" />
+
+<item itemtype="Connector" uid="Connector-2247" startpinid="Capacitor-2242-lPin" endpinid="Node-2248-1" pointList="-1240,-772,-1240,-784" />
+
+<item itemtype="Connector" uid="Connector-2249" startpinid="Node-2248-2" endpinid="Resistor-2240-rPin" pointList="-1240,-784,-1288,-784" />
+
+<item itemtype="Connector" uid="Connector-2250" startpinid="Resistor-2241-lPin" endpinid="Node-2251-1" pointList="-1200,-772,-1200,-784" />
+
+<item itemtype="Connector" uid="Connector-2252" startpinid="Node-2251-2" endpinid="Node-2248-0" pointList="-1200,-784,-1240,-784" />
+
+<item itemtype="Connector" uid="Connector-2253" startpinid="Push-1739-switch0pinN" endpinid="Resistor-2240-lPin" pointList="-1340,-784,-1320,-784" />
+
+<item itemtype="Connector" uid="Connector-2255" startpinid="Resistor-2241-rPin" endpinid="Node-2257-0" pointList="-1200,-740,-1200,-724,-1220,-724" />
+
+<item itemtype="Connector" uid="Connector-2256" startpinid="Capacitor-2242-rPin" endpinid="Node-2257-1" pointList="-1240,-740,-1240,-724,-1220,-724" />
+
+<item itemtype="Connector" uid="Connector-2258" startpinid="Node-2257-2" endpinid="Ground-2254-Gnd" pointList="-1220,-724,-1220,-724" />
 
 </circuit>
