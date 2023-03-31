@@ -1,5 +1,5 @@
 FAMILY=-mpic14
-MCU=-p12f675
+MCU=-p12f683
 CC=sdcc
 LD=sdcc
 CFLAGS=-I. -I/usr/local/share/sdcc/non-free/include
