@@ -6,16 +6,16 @@ En este laboratorio se debe crear un circuito que simule una tómbola simplifica
 
 ### Archivo de simulación
 
-Se completó, al menos eso parece, el circuito auxiliar del laboratorio
+Completo
 
 ### Informe
 
 1. Portada: completa
-2. Introducción: incompleta
-3. Nota Teórica: incompleta
-4. Desarrollo: incompleto
-5. Conclusiones y Recomendaciones: incompleto
+2. Introducción: completa
+3. Nota Teórica: completa
+4. Desarrollo: completa
+5. Conclusiones y Recomendaciones: completa
 
 ### Diagramas
 
-Solo se ha agregado un diagrama de funcionamiento y conexiones de los componentes.
+Todos los diagramas usados se han agregado
