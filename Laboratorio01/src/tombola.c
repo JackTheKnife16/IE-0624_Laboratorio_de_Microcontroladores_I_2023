@@ -1,16 +1,15 @@
 #include <pic14/pic12f675.h>
 
-//char vector_resultados[16];
-char head = 0; // apunta al ultimo resultado
-char ball_counter = 0;
+//char vector_datos[16] = {100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100};
 
-    
-short int time = 1;
 char flag_eje = 0;
 char counter = 0;
-char num = 0b11111111; 
+unsigned int num;
 char bandera = 0;
 char random = 0;
+char bola = 0;
+int encendido = 1;
+int minimo = 0;
 
 
 //To compile:
@@ -36,16 +35,14 @@ char random = 0;
 
 // estados
 #define IDLE 0
-#define FIRST 1
 #define NORMAL 2
-#define LAST 3
-#define BLINK 4
+#define BLINK 3
 
 void calcular_random(char* random);
 void delay (unsigned int tiempo);
 void generador_pulso(unsigned int tiempo);
 void reset_counter(unsigned int tiempo);
-void setear_bit2bit(char* flag_eje, char* num, char* counter, unsigned int time);
+void setear_bit2bit(char* flag_eje, unsigned int* num, char* counter, unsigned int time);
 char obtener_codigo(char* random);
 
 char current_state = IDLE;
@@ -53,28 +50,84 @@ char current_state = IDLE;
 
 
 void main(void) {
-
+    
     TRISIO = 0b00001000; //Poner todos los pines como salidas
 	GPIO = 0x00; //Poner pines en bajo
-    
-
-
-    // inicializar los valores del vector en 100
  
     //Loop forever
     while ( 1 ) {
 
         calcular_random(&random);
-        if(bandera == 0 && GP3 == 1){
-            bandera = 1;
-            flag_eje = 0;
-            num = obtener_codigo(&random);
-        }
-        if(GP3 == 0){
-            bandera = 0;
+
+        switch(current_state) {
+        case IDLE:
+            if(GP3 == 1){
+                current_state = NORMAL;
+                flag_eje = 0;
+            }
+            else{
+                num = 0b11111111;
+            }
+            
+            setear_bit2bit(&flag_eje, &num, &counter, 1);
+            break;
+        case NORMAL:
+            if(bandera == 0 && GP3 == 1){
+                bandera = 1;
+                num = obtener_codigo(&random);
+                flag_eje = 0;
+                bola = bola + 1;
+            }
+            if(GP3 == 0){
+                bandera = 0;
+            }
+            
+            setear_bit2bit(&flag_eje, &num, &counter, 1);
+            
+            if(flag_eje == 1 && bola > 15){
+                current_state = BLINK;
+                flag_eje = 0;
+                bola = 0;
+                delay(5000);
+            }
+            break;
+        case BLINK:
+            if(counter == 0 && encendido == 1){
+                num = 0b11111111;
+            }
+            if(counter == 0 && encendido == 0){
+                num = 0b10011001;
+            }
+
+            if(encendido == 1){
+                setear_bit2bit(&flag_eje, &num, &counter, 1);
+                if(flag_eje == 1){
+                    delay(800);
+                    encendido = 0;
+                    flag_eje = 0;
+                }
+            }
+            else{
+                setear_bit2bit(&flag_eje, &num, &counter, 1);
+                if(flag_eje == 1){
+                    delay(800);
+                    encendido = 1;
+                    flag_eje = 0;
+                    if(minimo < 3){
+                        minimo++;
+                    }
+                }
+            }
+            if(minimo == 3 && GP3 == 1){
+                bandera = 0;
+                current_state = NORMAL;
+            }
+            break;
+        default:
+            current_state = IDLE;
+            break;
         }
         
-        setear_bit2bit(&flag_eje, &num, &counter, time);
         
     }
  
@@ -104,10 +157,10 @@ void calcular_random(char* random){
 // esta funcion es la encargada de la comunicacion serial con el circuito externo
 // maneja los pines GP0 que comunica el dato, el pin GP1 que genera el pulso
 // y el pin GP2 que resetea el counter externo como medida de seguridad.
-void setear_bit2bit(char* flag_eje, char* num, char* counter, unsigned int time){
+void setear_bit2bit(char* flag_eje, unsigned int* num, char* counter, unsigned int time){
     if(*flag_eje == 0){
-        GP0 = *num & 1;
-        *num = *num >> 1;
+        GP0 = (*num) & 0b00000001;
+        (*num) = (*num) >> 1;
     
         if(*counter == 0){
             reset_counter(time);
@@ -129,7 +182,7 @@ void delay(unsigned int tiempo)
 	unsigned int j;
 
 	for(i=0;i<tiempo;i++)
-	  for(j=0;j<200;j++);
+	  for(j=0;j<100;j++);
 }
 
 // esta funcion genera los pulsos para el contador que maneja el clk de los flip flops de datos
