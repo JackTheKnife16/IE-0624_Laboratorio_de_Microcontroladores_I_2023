@@ -6,13 +6,13 @@ En este laboratorio se debe crear un circuito que simule una lavadora con varios
 
 ### Archivo de simulación
 
-Inexistente
+Se agrego el archivo de simulacion sin embargo en este momento el firmware aun no se ha programado, lo que se muestra es el archivo de simulacion de como van conectados los pines del micro.
 
 ### Informe
 
 1. Portada: completa
 2. Introducción: completa
-3. Nota Teórica: incompleta
+3. Nota Teórica: completa
 4. Desarrollo: incompleta
 5. Conclusiones y Recomendaciones: incompleta
 
