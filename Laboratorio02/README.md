@@ -17,7 +17,7 @@ Archivo de simulacion final listo.
 2. Introducción: completa
 3. Nota Teórica: completa
 4. Desarrollo: completa
-5. Conclusiones y Recomendaciones: incompleta
+5. Conclusiones y Recomendaciones: completa
 
 ### Diagramas
 
