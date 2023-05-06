@@ -1,16 +1,5 @@
 /***************************************************
-  This is our GFX example for the Adafruit ILI9341 Breakout and Shield
-  ----> http://www.adafruit.com/products/1651
-
-  Check out the links above for our tutorials and wiring diagrams
-  These displays use SPI to communicate, 4 or 5 pins are required to
-  interface (RST is optional)
-  Adafruit invests time and resources providing this open source code,
-  please support Adafruit and open-source hardware by purchasing
-  products from Adafruit!
-
-  Written by Limor Fried/Ladyada for Adafruit Industries.
-  MIT license, all text above must be included in any redistribution
+  LABORATORIO 03 - FREDDY ZUNIGA CERDAS
  ****************************************************/
 #define ILI9341_BLACK       0x0000  ///<   0,   0,   0
 #define ILI9341_NAVY        0x000F  ///<   0,   0, 123
@@ -35,6 +24,7 @@
 #include "SPI.h"
 #include "Adafruit_GFX.h"
 #include "Adafruit_ILI9341.h"
+#include <math.h>
 
 // For the Adafruit shield, these are the default.
 #define TFT_CLK 13
@@ -45,35 +35,185 @@
 #define TFT_RST 8
 
 #define TOTAL_SOURCE 4
+#define CRECIENTE 1
+#define DECRECIENTE 0
+#define ESTACIONARIO 2
 
+Adafruit_ILI9341 tft = Adafruit_ILI9341(TFT_CS, TFT_DC, TFT_MOSI, TFT_CLK, TFT_RST, TFT_MISO);
 int voltage_source[4] = {0,0,0,0};
 int voltage_buffer[4] = {0,0,0,0};
 int voltage_colors[4] = {ILI9341_YELLOW, ILI9341_DARKGREEN, ILI9341_CYAN, ILI9341_WHITE};
 char* v_str[4] = {"V1: ", "V2: ", "V3: ", "V4: "};
 char* c_type[2] = {"DC", "AC"};
 int current_type;
-int current_buffer = 0;
+int current_buffer = -1;
+int comunicacion_serial_habilitada = 0;
 int voltages_position = 4;
+uint8_t primera_lectura = 1;
+uint16_t lectura_actual;
+uint16_t lectura_anterior;
+uint32_t tiempo_actual;
+uint32_t tiempo_anterior;
+uint8_t primer_crecimiento = 1;
+uint8_t crecimiento_actual;
+uint8_t crecimiento_anterior;
+uint8_t pivote_listo = 0;
+uint16_t pivote[4];
+uint32_t tiempo_pivote[4];
+uint8_t indice = 0; // indice 
+uint8_t habilitar_pantalla = 0;
+double suma = 0.0;
+double rms_array[4];
+int rms_anterior[4] = {0,0,0,0};
+int rms_actual[4];
+double dc_array[4];
+uint16_t minimo[4];
+uint16_t maximo[4];
+uint32_t periodo[4];
 
-// Use hardware SPI (on Uno, #13, #12, #11) and the above for CS/DC
-//Adafruit_ILI9341 tft = Adafruit_ILI9341(TFT_CS, TFT_DC);
-// If using the breakout, change pins as desired
-Adafruit_ILI9341 tft = Adafruit_ILI9341(TFT_CS, TFT_DC, TFT_MOSI, TFT_CLK, TFT_RST, TFT_MISO);
+////////////////////////////////////////////////////////////////////////////////
 
-
-void update_source_val(){
-  for(int k = 0; k < TOTAL_SOURCE; k++){
-    // se guardan los resultados cuantizados de las entradas analogicas 0, 1, 2, 3
-    // en el array voltage_source
-    voltage_source[k] = analogRead(k);
-  }
-
+// resetea valores para empezar de nuevo con la obtencion del rms
+void reiniciar_marcas(){
+  suma = 0.0;
+  primera_lectura = 1;
+  primer_crecimiento = 1;
+  pivote_listo = 0;
 }
 
-void setear_pantalla(){
-  tft.setCursor(50, 1);
-  tft.fillRect(0, 1 * 8, tft.width(), 8, ILI9341_BLACK); 
 
+// calcula el rms de la senal alterna
+void calcular_rms(uint8_t index){
+  periodo[index] = tiempo_actual - tiempo_pivote[index];
+  double rms = (double) 1 / periodo[index] * suma;
+  rms = sqrt(rms);
+  rms_actual[index] = rms * 100;
+  rms_array[index] = (double) rms_actual[index] / 100; 
+}
+
+// convierte un valor cuantizado a una tension real
+double convertir_tension_real(int cuantizado){
+  double tension_completa = (double) 48 / 1023 * cuantizado - 24;
+  return tension_completa;
+}
+
+// esto acumula la suma de rectangulos bajo la curva, como en calculo 1
+void sumar_rectangulo(){
+  double tension_completa = (double) 48 / 1023 * lectura_actual - 24;
+  int delta_tiempo = tiempo_actual - tiempo_anterior;
+  suma += (double) pow(tension_completa, 2) * delta_tiempo;
+}
+
+void obtener_minimo(int k){
+  if(crecimiento_anterior == CRECIENTE){;}
+  else{
+    if(crecimiento_actual == CRECIENTE) {
+      minimo[k] = lectura_anterior;
+    }
+  }
+}
+
+void obtener_maximo(int k){
+  if(crecimiento_anterior == DECRECIENTE){;}
+  else{
+    if(crecimiento_actual == DECRECIENTE) {
+      maximo[k] = lectura_anterior;
+    }
+  }
+}
+
+// obtiene la monotonia de la curva
+void obtener_crecimiento(){
+  if(lectura_actual > lectura_anterior){
+    crecimiento_actual = CRECIENTE;
+  }
+  else{
+    if(lectura_actual < lectura_anterior){
+      crecimiento_actual = DECRECIENTE;
+    }
+    else{
+      crecimiento_actual = ESTACIONARIO;
+    }
+  }
+}
+
+// algoritmo para obtener el RMS a partir de las senales de entrada
+void procesando_analog(int k){
+  if(primera_lectura == 1){
+    primera_lectura = 0;
+    lectura_actual = analogRead(k);
+    tiempo_actual = micros();
+    minimo[indice] = 2000;
+    maximo[indice] = 0;
+  }
+  else{
+    lectura_anterior = lectura_actual;
+    tiempo_anterior = tiempo_actual;
+    lectura_actual = analogRead(k);
+    tiempo_actual = micros();
+    if(primer_crecimiento == 1) {
+      obtener_crecimiento();
+      primer_crecimiento = 0;
+    }
+    else{
+      crecimiento_anterior = crecimiento_actual;
+      obtener_crecimiento();
+      obtener_minimo(indice);
+      obtener_maximo(indice);
+      if(pivote_listo == 1) {
+        if(crecimiento_actual == DECRECIENTE){
+          if(crecimiento_anterior == DECRECIENTE){
+            sumar_rectangulo();
+          }
+          else{
+            calcular_rms(indice);
+            reiniciar_marcas();
+            if(indice == 3){
+              habilitar_pantalla = 1; 
+            }
+            else{
+              indice++;
+            }
+          }
+
+        }
+        else{
+          sumar_rectangulo();
+        }
+      }
+      else{
+        if(crecimiento_actual == DECRECIENTE){
+          if(crecimiento_anterior == DECRECIENTE){
+            ;
+          }
+          else{
+            pivote_listo = 1;
+            pivote[indice] = lectura_anterior;
+            tiempo_pivote[indice] = tiempo_anterior;
+            sumar_rectangulo();
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+// 
+void update_source_val(){
+  for(int k = 0; k < TOTAL_SOURCE; k++){
+    voltage_buffer[k] = voltage_source[k];
+    voltage_source[k] = analogRead(k);
+    dc_array[k] = convertir_tension_real(voltage_source[k]);
+  }
+}
+
+
+// se encarga de setear la pantalla lcd
+void setear_pantalla(){
+  // esto dibuja el encabezado 
   tft.setTextSize(1);
   tft.setTextColor(ILI9341_WHITE);
   tft.setCursor(90, 1 * 30); 
@@ -87,15 +227,19 @@ void setear_pantalla(){
   tft.setTextSize(3);
   tft.drawRoundRect(15, voltages_position * 30 - 15, tft.width()-30, 160, 10, ILI9341_WHITE);
   for(int k = 0; k < 4; k++){
-    tft.setCursor(20, (voltages_position + k) * 30); // 8 píxeles de altura por línea
+    tft.setCursor(20, (voltages_position + k) * 30); 
     tft.setTextSize(3);
     tft.setTextColor(voltage_colors[k]);
     tft.print(v_str[k]);
-    if(voltage_source[k] != voltage_buffer[k]){
-      voltage_buffer[k] = voltage_source[k];
-      tft.fillRect(90, (voltages_position + k) * 30, 120, 30, ILI9341_BLACK); // Borrar la línea anterior   
+
+    if(current_type){
+      tft.fillRect(90, (voltages_position + k) * 30, 130, 30, ILI9341_BLACK); // Borrar la línea anterior  
+      tft.print(rms_array[k]);
     }
-    tft.print(voltage_buffer[k]);
+    else{
+      tft.fillRect(90, (voltages_position + k) * 30, 130, 30, ILI9341_BLACK); // Borrar la línea anterior   
+      tft.print(dc_array[k]);
+    }
     tft.println("V");
   }
 
@@ -110,23 +254,136 @@ void setear_pantalla(){
   tft.print(c_type[current_buffer]);
 
 
+  // este codigo pone el mensaje del final sobre el rango
+  tft.setTextSize(1);
+  tft.setCursor(30, 280); 
+  tft.println("rango soportado: [-24V, 24V]");
+
+
 }
 
+
+
+// funcion encargada de enviar datos por el puerto serial
+void enviar_datos(){
+  if(digitalRead(2) == HIGH){
+    if(current_type == 1){
+      for(int k = 0; k < 4; k++){
+        if(rms_anterior[k] != rms_actual[k]){
+          Serial.print("AC,"); // tipo de corriente
+          Serial.print(k+1); // numero de fuente
+          Serial.print(",");
+          Serial.print(rms_array[k]); // rms de la fuente
+          Serial.print(",");
+          Serial.print(micros()); // tiempo en us
+          Serial.println("");
+        }
+      }
+    }
+    else{
+      for(int k = 0; k < 4; k++){
+        if(voltage_source[k] != voltage_buffer[k]){
+          Serial.print("DC,"); // tipo de corriente
+          Serial.print(k+1); // numero de fuente
+          Serial.print(",");
+          Serial.print(dc_array[k]); // rms de la fuente
+          Serial.print(",");
+          Serial.print(micros()); // tiempo en us
+          Serial.println("");
+        }
+      }
+    }
+  }
+}
+
+
+
 void setup() {
-  // se declara el pin digital 7 como una entrada
-  pinMode(7, INPUT);
+  // PINES DE ENTRADA Y SALIDA DIGITALES
+  pinMode(7, INPUT); // BOTON AC/DC
+  pinMode(6, OUTPUT); // LED INDICADOR PARA FUENTE 3
+  pinMode(5, OUTPUT); // LED INDICADOR PARA FUENTE 2
+  pinMode(4, OUTPUT); // LED INDICADOR PARA FUENTE 1
+  pinMode(3, OUTPUT); // LED INDICADOR PARA FUENTE 0
+  pinMode(2, INPUT); // BOTON HABILITADOR SERIAL 
   // Inicializar el objeto de pantalla TFTLCD
   tft.begin();
+}
 
+
+
+void comunicacion_serial(){
+  // Verifica si el pin de habilitación está en estado bajo
+  if (digitalRead(2) == HIGH) {
+    if (comunicacion_serial_habilitada == 0) {
+      Serial.begin(9600); // Inicia la comunicación serial
+      comunicacion_serial_habilitada = 1;
+      for(int k = 0; k < 4; k++){
+        voltage_source[k] = 0;
+        rms_anterior[k] = 0;
+      }
+    }
+  } else {
+    if (comunicacion_serial_habilitada == 1) {
+      Serial.end(); // Detiene la comunicación serial
+      comunicacion_serial_habilitada = 0;
+    }
+  }
+}
+
+void alarma_dc(){
+  for(int k = 0; k < 4; k++){
+    if(voltage_source[k] > 939 || voltage_source[k] < 85){
+      digitalWrite(k+3, HIGH); 
+    }
+    else{
+      digitalWrite(k+3, LOW); 
+    }
+  }
+}
+
+void alarma_ac(){
+  for(int k = 0; k < 4; k++){
+    if(maximo[k] > 937 || minimo[k] < 85){
+      digitalWrite(k+3, HIGH); 
+    }
+    else{
+      digitalWrite(k+3, LOW); 
+    }
+  }
 }
 
 void loop() {
-  // se guarda el valor del pin digital 7 en la variable current_type
   current_type = digitalRead(7);
-  // se guardan el valor cuantizado de los pines analogicos 0, 1, 2 y 3
-  update_source_val();
-  // setea los datos que se mostraran en la pantalla
-  setear_pantalla();
-  
-  //delay(100); // Esperar antes de actualizar de nuevo
+  comunicacion_serial();
+
+  if(current_type == 1) {
+    for(int k = 0; k < 4; k++){
+      voltage_source[k] = 0;
+    }
+    if(habilitar_pantalla == 1){
+      enviar_datos();
+      alarma_ac();
+      setear_pantalla();
+      reiniciar_marcas();
+      habilitar_pantalla = 0;
+      indice = 0;
+      for(int k = 0; k < 4; k++){
+        rms_anterior[k] = rms_actual[k];
+      }
+    }
+    else{
+      procesando_analog(indice);
+    } 
+  }
+  else{
+    for(int k = 0; k < 4; k++){
+      rms_anterior[k] = 0;
+    }
+    habilitar_pantalla = 0;
+    update_source_val();
+    enviar_datos();
+    alarma_dc();
+    setear_pantalla();
+  }
 }

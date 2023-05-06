@@ -5,20 +5,19 @@ En este laboratorio se debe crear un circuito que simule un voltimetro de 4 cana
 ## Estado actual
 
 ### Firmware
-Se ha trabajado la parte de la comunicacion con la pantalla, requerira
-pequenos ajustes cuando se una a las otras partes.
+Firmware completo
 
 ### Archivo de simulación
-Se agrego un archivo de simulacion momentaneo para probar el firmware con la pantalla escogida.
+Archivo de simulacion completo
 
 ### Informe
 
 1. Portada: completa
-2. Introducción: incompleta
-3. Nota Teórica: incompleta
-4. Desarrollo: incompleta
-5. Conclusiones y Recomendaciones: incompleta
+2. Introducción: completa
+3. Nota Teórica: completa
+4. Desarrollo: completa
+5. Conclusiones y Recomendaciones: completa
 
 ### Diagramas
 
-No iniciado
+Diagramas listos
