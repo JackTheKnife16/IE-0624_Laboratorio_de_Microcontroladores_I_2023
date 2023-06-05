@@ -10,12 +10,12 @@ Firmware completo
 
 ### Informe
 
-1. Portada: incompleta
-2. Introducción: incompleta
-3. Nota Teórica: incompleta
-4. Desarrollo: incompleta
-5. Conclusiones y Recomendaciones: incompleta
+1. Portada: completa
+2. Introducción: completa
+3. Nota Teórica: completa
+4. Desarrollo: completa
+5. Conclusiones y Recomendaciones: completa
 
 ### Diagramas
 
-Diagramas incompleto
+Diagramas completo
